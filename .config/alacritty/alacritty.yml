@@ -5,10 +5,13 @@ env:
   TERM: xterm-256color
 
 window:
-  opacity: 1
-  padding:
-    x: 10
-    y: 10
+  dimensions:
+    columns: 150
+    lines: 30
+    opacity: 1
+    padding:
+      x: 20
+      y: 20
 
 live_config_reload: true
 scrolling:
@@ -31,7 +34,7 @@ font:
   bold_italic:
     family: JetBrains Mono Nerd Font
     style: BoldItalic
-  size: 14.0
+  size: 13.0
   # use_thin_strokes: true
 
 draw_bold_text_with_bright_colors: true
