@@ -17,7 +17,8 @@ timezone="America/New_York"
 hostname="arch-test"
 username="jc"
 #SHA512 hash of password. To generate, run 'mkpasswd -m sha-512', don't forget to prefix any $ symbols with \ . The entry below is the hash of 'password'
-user_password="\$6\$/VBa6GuBiFiBmi6Q\$yNALrCViVtDDNjyGBsDG7IbnNR0Y/Tda5Uz8ToyxXXpw86XuCVAlhXlIvzy1M8O.DWFB6TRCia0hMuAJiXOZy/"
+user_password="00a0bb2d118b69e97a2b2b2f7a635b3c11fc8e8abd049f615284731173e8934efe588461862c455b3a524efd55a66758b98ed9eb8d3862e559fe27ae0eff4799"
+#user_password="\$6\$/VBa6GuBiFiBmi6Q\$yNALrCViVtDDNjyGBsDG7IbnNR0Y/Tda5Uz8ToyxXXpw86XuCVAlhXlIvzy1M8O.DWFB6TRCia0hMuAJiXOZy/"
 
 #To fully automate the setup, change badidea=no to yes, and enter a cleartext password for the disk encryption 
 
@@ -48,7 +49,6 @@ guipacs=(
 	firefox 
 	nm-connection-editor
 	neofetch
-	mousepad
  	sbctl
 	)
 
@@ -89,7 +89,7 @@ mount -t vfat /dev/disk/by-partlabel/EFISYSTEM "$rootmnt"/efi
 
 #Update pacman mirrors and then pacstrap base install
 echo "Pacstrapping..."
-reflector --country GB --age 24 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
+reflector --country US --age 24 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
 pacstrap -K $rootmnt "${pacstrappacs[@]}" 
 
 echo "Setting up environment..."
