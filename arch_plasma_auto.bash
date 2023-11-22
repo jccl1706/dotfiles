@@ -43,14 +43,17 @@ pacstrappacs=(
         )    
 ### Desktop packages #####
 guipacs=(
-	plasma
-  plasma-wayland-session
-	sddm 
+  gnome
+  gnome-tweaks
+  gdm
+	# plasma
+  # plasma-wayland-session
+	# sddm 
 	kitty
 	firefox 
 	nm-connection-editor
 	neofetch
- 	sbctl
+  sbctl
 	)
 
 
