@@ -5,10 +5,18 @@ env:
   TERM: xterm-256color
 
 window:
-    opacity: 1
-    padding:
-      x: 20
-      y: 20
+  # position:
+  #   x: 1920
+  #   y: 768
+
+  dimensions:
+    columns: 100
+    lines: 39
+
+  opacity: 0.95
+  padding:
+    x: 10
+    y: 10
 
 live_config_reload: true
 scrolling:
@@ -39,6 +47,9 @@ draw_bold_text_with_bright_colors: true
 cursor:
   style: Block
   unfocused_hollow: true
+
+# mouse_bindings:
+#   - { mouse: Middle, action: PasteSelection }
 
 key_bindings:
   - { key: N, mods: Super|Shift, action: SpawnNewInstance }

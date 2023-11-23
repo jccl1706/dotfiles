@@ -15,6 +15,12 @@ $character"""
 [fill]
 symbol = " "
 
+[directory]
+truncation_length = 100
+truncate_to_repo = false
+style = " yellow"
+format = "[:$path]($style)[$read_only]($read_only_style) "
+
 [character]
 success_symbol = "[❯](purple)"
 error_symbol = "[❯](red)"
@@ -40,5 +46,16 @@ style = "bright-black"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-style = "cyan"
+style = "red"
 
+[python]
+format = '[\[py ${pyenv_prefix}(${version})(\($virtualenv\))\]]($style) '
+version_format = "v${major}(.${minor})"
+detect_extensions = []
+style = "bold yellow"
+
+[sudo]
+symbol = "#"
+format = '[$symbol]($style) '
+style = "bold red"
+disabled = false

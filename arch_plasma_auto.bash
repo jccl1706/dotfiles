@@ -22,7 +22,7 @@ user_password="\$6\$KMjCZajVhYXNihUr\$AfqyGDmloZs.sEWUkdsmpbKoZqEks3tbJS5Xr9goUC
 
 #To fully automate the setup, change badidea=no to yes, and enter a cleartext password for the disk encryption 
 
-badidea="yes"
+badidea="no"
 crypt_password="1111"
 
 
@@ -33,6 +33,8 @@ pacstrappacs=(
         base-devel
         linux-firmware
         amd-ucode
+        git
+        neovim
         nano
         cryptsetup
         util-linux
@@ -43,13 +45,13 @@ pacstrappacs=(
         )    
 ### Desktop packages #####
 guipacs=(
-  gnome
-  gnome-tweaks
-  gdm
+  # gnome
+  # gnome-tweaks
+  # gdm
 	# plasma
   # plasma-wayland-session
 	# sddm 
-	kitty
+	# kitty
 	firefox 
 	nm-connection-editor
 	neofetch
@@ -140,7 +142,7 @@ arch-chroot "$rootmnt" pacman -Sy "${guipacs[@]}" --noconfirm --quiet
 
 #enable the services we will need on start up
 echo "Enabling services..."
-systemctl --root "$rootmnt" enable systemd-resolved systemd-timesyncd NetworkManager sddm
+systemctl --root "$rootmnt" enable systemd-resolved systemd-timesyncd NetworkManager
 #mask systemd-networkd as we will use NetworkManager instead
 systemctl --root "$rootmnt" mask systemd-networkd
 #regenerate the ramdisk, this will create our UKI
