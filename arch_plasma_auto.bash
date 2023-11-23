@@ -22,7 +22,7 @@ user_password="\$6\$KMjCZajVhYXNihUr\$AfqyGDmloZs.sEWUkdsmpbKoZqEks3tbJS5Xr9goUC
 
 #To fully automate the setup, change badidea=no to yes, and enter a cleartext password for the disk encryption 
 
-badidea="no"
+badidea="yes"
 crypt_password="1111"
 
 
@@ -52,13 +52,12 @@ guipacs=(
   # plasma-wayland-session
 	# sddm 
 	# kitty
-	firefox 
+	firefox
+  alacritty
 	nm-connection-editor
 	neofetch
   sbctl
 	)
-
-
 
 
 # Partition
@@ -90,7 +89,6 @@ echo "Mounting File Systems..."
 mount /dev/mapper/root "$rootmnt"
 mkdir "$rootmnt"/efi -p
 mount -t vfat /dev/disk/by-partlabel/EFISYSTEM "$rootmnt"/efi
-
 
 
 #Update pacman mirrors and then pacstrap base install
