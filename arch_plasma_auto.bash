@@ -48,9 +48,9 @@ guipacs=(
   # gnome
   # gnome-tweaks
   # gdm
-	# plasma
-  # plasma-wayland-session
-	# sddm 
+	plasma
+  plasma-wayland-session
+	sddm 
 	# kitty
 	firefox
   alacritty
@@ -140,7 +140,7 @@ arch-chroot "$rootmnt" pacman -Sy "${guipacs[@]}" --noconfirm --quiet
 
 #enable the services we will need on start up
 echo "Enabling services..."
-systemctl --root "$rootmnt" enable systemd-resolved systemd-timesyncd NetworkManager
+systemctl --root "$rootmnt" enable systemd-resolved systemd-timesyncd NetworkManager sddm
 #mask systemd-networkd as we will use NetworkManager instead
 systemctl --root "$rootmnt" mask systemd-networkd
 #regenerate the ramdisk, this will create our UKI
