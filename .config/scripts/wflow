@@ -1,9 +1,7 @@
 #!/bin/bash
 
-#while true; do
-    wflow_info=$(sensors | awk '/Flow/ && $3 !~ /^(1|2)$/ {printf "%1d.%1d\n", $3/10, $3%10}')
-    echo "󰞍" "$wflow_info"
-#    xsetroot -name "Coolant: $coolant_info"
-#    sleep 5
-#done
+## to monitor my water flow rate
 
+wflow_info=$(sensors | awk '/Flow/ && $3 !~ /^(1|2)$/ {printf "%1d.%1d\n", $3/10, $3%10}')
+icon="󰞍"
+printf " %s %s \\n" "$icon" "$wflow_info"
