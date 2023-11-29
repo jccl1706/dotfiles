@@ -3,5 +3,6 @@
 #exec picom &
 #exec nitrogen --restore &
 #lxpolkit &
-#xset r rate 300 50 &
+exec /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 &
+xset r rate 300 50 &
 exec dwm
