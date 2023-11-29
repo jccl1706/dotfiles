@@ -1,0 +1,15 @@
+#!/bin/bash
+
+SCRIPT_PATH=$HOME/.config/scripts
+
+
+while true; do
+    COOLANT=$($SCRIPT_PATH/coolantemp)
+    TIME=$($SCRIPT_PATH/clock)
+    WFLOW=$($SCRIPT_PATH/wflow)
+
+  xsetroot -name " $WFLOW | ^c#5e81ac^$COOLANT^d^ | $TIME^d^ "
+  sleep 5s
+
+done &    
+
