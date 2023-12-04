@@ -10,8 +10,8 @@ window:
   #   y: 768
 
   dimensions:
-    columns: 100
-    lines: 39
+    columns: 0
+    lines: 0
 
   opacity: 0.95
   padding:
@@ -48,8 +48,8 @@ cursor:
   style: Block
   unfocused_hollow: true
 
-# mouse_bindings:
-#   - { mouse: Middle, action: PasteSelection }
+mouse_bindings:
+   - { mouse: Middle, action: PasteSelection }
 
 key_bindings:
   - { key: N, mods: Super|Shift, action: SpawnNewInstance }
