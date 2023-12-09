@@ -3,5 +3,5 @@
 ## to monitor my water flow rate
 
 wflow_info=$(sensors | awk '/Flow/ && $3 !~ /^(1|2)$/ {printf "%1d.%1d\n", $3/10, $3%10}')
-icon="󰞍"
+icon="󰞍 "
 printf " %s %s \\n" "$icon" "$wflow_info"
