@@ -1,3 +1,4 @@
+# test
 #!/bin/bash
 # uncomment to view debugging information 
 #set -xeuo pipefail
