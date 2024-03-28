@@ -2,7 +2,7 @@
 	name = jccl1706
 	email = jccl1706@gmail.com
 [core]
-	editor = nvim
+	editor = nano
 [init]
 	defaultBranch = main
 
