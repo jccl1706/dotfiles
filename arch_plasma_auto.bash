@@ -1,4 +1,3 @@
-#test
 #!/bin/bash
 # uncomment to view debugging information 
 #set -xeuo pipefail
@@ -43,7 +42,7 @@ pacstrappacs=(
         dosfstools
         sudo
         networkmanager
-        )    
+        )
 ### Desktop packages #####
 guipacs=(
   # gnome
@@ -51,7 +50,7 @@ guipacs=(
   # gdm
 	plasma
   plasma-wayland-session
-	sddm 
+	sddm
 	# kitty
 	firefox
   alacritty
@@ -95,7 +94,7 @@ mount -t vfat /dev/disk/by-partlabel/EFISYSTEM "$rootmnt"/efi
 #Update pacman mirrors and then pacstrap base install
 echo "Pacstrapping..."
 reflector --country US --age 24 --protocol http,https --sort rate --save /etc/pacman.d/mirrorlist
-pacstrap -K $rootmnt "${pacstrappacs[@]}" 
+pacstrap -K $rootmnt "${pacstrappacs[@]}"
 
 echo "Setting up environment..."
 #set up locale/env
@@ -111,7 +110,7 @@ systemd-firstboot --root "$rootmnt" \
 arch-chroot "$rootmnt" locale-gen
 echo "Configuring for first boot..."
 #add the local user
-arch-chroot "$rootmnt" useradd -G wheel -m -p "$user_password" "$username" 
+arch-chroot "$rootmnt" useradd -G wheel -m -p "$user_password" "$username"
 #uncomment the wheel group in the sudoers file
 sed -i -e '/^# %wheel ALL=(ALL:ALL) NOPASSWD: ALL/s/^# //' "$rootmnt"/etc/sudoers
 #create a basic kernel cmdline, we're using DPS so we don't need to have anything here really, but if the file doesn't exist, mkinitcpio will complain
